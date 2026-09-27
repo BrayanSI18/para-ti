@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flores Amarillas para Cesia Jael 💛 21 de Septiembre</title>
+  <meta name="description" content="Una dedicatoria especial de flores amarillas para Cesia Jael por el 21 de septiembre con todo mi amor y cariño.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Fondo de Partículas / Canvas de Flores Flotantes -->
+  <canvas id="petalsCanvas"></canvas>
+  <div class="stars-layer"></div>
+  <div class="glowing-orb orb-1"></div>
+  <div class="glowing-orb orb-2"></div>
+
+  <!-- Barra de Música Flotante / Audio Control -->
+  <div class="audio-control-container">
+    <button id="musicToggleBtn" class="glass-btn audio-btn" title="Música de fondo">
+      <i class="fa-solid fa-music"></i>
+      <span id="musicStatusText">Música: Silencio</span>
+    </button>
+  </div>
+
+  <!-- Botón de Personalizar Dedicatoria -->
+  <div class="customize-control-container">
+    <button id="openCustomizeModalBtn" class="glass-btn customize-btn" title="Personalizar dedicatoria">
+      <i class="fa-solid fa-pen-fancy"></i>
+      <span>Personalizar</span>
+    </button>
+  </div>
+
+  <main class="main-content">
+    <!-- SECCIÓN 1: HERO PRINCIPAL -->
+    <section class="hero-section" id="hero">
+      <div class="badge-tag animate-fade-down">
+        <i class="fa-solid fa-sparkles"></i> 21 de Septiembre • Con Todo Mi Cariño
+      </div>
+      
+      <h1 class="hero-title animate-fade-up">
+        Flores Amarillas <br>
+        <span class="highlight-text" id="recipientDisplay">Para Cesia Jael</span> 💛
+      </h1>
+      
+      <p class="hero-subtitle animate-fade-up delay-1">
+        "Dicen que quien te regala flores amarillas promete quedarse a tu lado, iluminar tu camino y recordarte lo infinitamente valiosa que es tu luz, Cesia Jael."
+      </p>
+
+      <!-- Gran Flor Central Animada Interactivamente -->
+      <div class="flower-stage animate-scale-in delay-2">
+        <div class="glow-sun-aura"></div>
+        <div class="sunflower-container" id="interactiveFlower" title="¡Haz clic en la flor para hacerla brillar!">
+          <div class="flower-glow"></div>
+          
+          <!-- Tallo y Hojas -->
+          <div class="flower-stem"></div>
+          <div class="leaf leaf-left"></div>
+          <div class="leaf leaf-right"></div>
+          
+          <!-- Capa de Pétalos en SVG -->
+          <div class="flower-head">
+            <svg class="flower-svg" viewBox="0 0 300 300">
+              <defs>
+                <linearGradient id="petalGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFF176"/>
+                  <stop offset="60%" stop-color="#FFD54F"/>
+                  <stop offset="100%" stop-color="#FFA000"/>
+                </linearGradient>
+                <linearGradient id="petalGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFEE58"/>
+                  <stop offset="70%" stop-color="#FFCA28"/>
+                  <stop offset="100%" stop-color="#FF8F00"/>
+                </linearGradient>
+                <radialGradient id="centerGrad" cx="40%" cy="40%" r="60%">
+                  <stop offset="0%" stop-color="#5D4037"/>
+                  <stop offset="50%" stop-color="#3E2723"/>
+                  <stop offset="100%" stop-color="#27130c"/>
+                </radialGradient>
+                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="6" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+
+              <!-- Capa trasera de pétalos -->
+              <g class="petals-back">
+                <!-- 16 pétalos distribuidos a 22.5 grados -->
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(0 150 150)" />
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(22.5 150 150)" />
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(45 150 150)" />
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(67.5 150 150)" />
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(90 150 150)" />
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(112.5 150 150)" />
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(135 150 150)" />
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(157.5 150 150)" />
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(180 150 150)" />
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(202.5 150 150)" />
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(225 150 150)" />
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(247.5 150 150)" />
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(270 150 150)" />
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(292.5 150 150)" />
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(315 150 150)" />
+                <path d="M150 150 C135 70, 165 70, 150 20 C135 70, 165 70, 150 150" fill="url(#petalGrad1)" transform="rotate(337.5 150 150)" />
+              </g>
+
+              <!-- Capa frontal de pétalos -->
+              <g class="petals-front">
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(11.25 150 150)" />
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(33.75 150 150)" />
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(56.25 150 150)" />
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(78.75 150 150)" />
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(101.25 150 150)" />
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(123.75 150 150)" />
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(146.25 150 150)" />
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(168.75 150 150)" />
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(191.25 150 150)" />
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(213.75 150 150)" />
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(236.25 150 150)" />
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(258.75 150 150)" />
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(281.25 150 150)" />
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(303.75 150 150)" />
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(326.25 150 150)" />
+                <path d="M150 150 C140 85, 160 85, 150 35 C140 85, 160 85, 150 150" fill="url(#petalGrad2)" transform="rotate(348.75 150 150)" />
+              </g>
+
+              <!-- Centro del Girasol -->
+              <circle cx="150" cy="150" r="48" fill="url(#centerGrad)" filter="url(#glow)"/>
+              <circle cx="150" cy="150" r="46" fill="#3E2723" opacity="0.9"/>
+              
+              <!-- Textura del centro (semillitas doradas) -->
+              <g class="flower-seeds" opacity="0.85">
+                <circle cx="150" cy="150" r="8" fill="#FBC02D"/>
+                <circle cx="138" cy="142" r="4" fill="#FFD54F"/>
+                <circle cx="162" cy="142" r="4" fill="#FFD54F"/>
+                <circle cx="140" cy="158" r="4" fill="#FFD54F"/>
+                <circle cx="160" cy="158" r="4" fill="#FFD54F"/>
+                <circle cx="150" cy="132" r="4" fill="#FFD54F"/>
+                <circle cx="150" cy="168" r="4" fill="#FFD54F"/>
+                <circle cx="132" cy="150" r="4" fill="#FFD54F"/>
+                <circle cx="168" cy="150" r="4" fill="#FFD54F"/>
+                <circle cx="126" cy="138" r="3.5" fill="#FFE082"/>
+                <circle cx="174" cy="138" r="3.5" fill="#FFE082"/>
+                <circle cx="126" cy="162" r="3.5" fill="#FFE082"/>
+                <circle cx="174" cy="162" r="3.5" fill="#FFE082"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="flower-hint">
+          <i class="fa-solid fa-hand-pointer pulse-icon"></i> Toca el girasol para recibir un mensaje de amor
+        </div>
+      </div>
+
+      <!-- Botones de Acción Rápida -->
+      <div class="action-buttons-group animate-fade-up delay-3">
+        <button id="openLetterBtn" class="primary-gold-btn">
+          <i class="fa-solid fa-envelope-open-text"></i> Abrir Carta Especial
+        </button>
+        <button id="rainBlossomBtn" class="secondary-glass-btn">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Lluvia de Flores
+        </button>
+      </div>
+
+      <div class="scroll-down-indicator">
+        <span>Descubre más mensajes</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: CARTA INTERACTIVA / ENVELOPE -->
+    <section class="letter-section" id="carta">
+      <div class="section-header">
+        <span class="section-tag">Una dedicatoria desde el corazón</span>
+        <h2 class="section-title">Tu Carta de Flores Amarillas</h2>
+      </div>
+
+      <div class="letter-wrapper">
+        <div class="envelope-box" id="envelopeBox">
+          <div class="envelope-flap" id="envelopeFlap"></div>
+          <div class="envelope-pocket"></div>
+          <div class="envelope-letter" id="letterPaper">
+            <div class="letter-content">
+              <div class="letter-stamp">💛 21 Sept</div>
+              <h3 class="letter-greeting" id="letterGreeting">Para Cesia Jael,</h3>
+              <p class="letter-body" id="letterCustomBody">
+                Hoy 21 de septiembre quiero regalarte estas flores amarillas como un símbolo eterno de mi cariño, admiración y gratitud. 
+                <br><br>
+                Cesia Jael, cada pétalo dorado representa lo especial y única que eres: tu sonrisa radiante que alegra cualquier momento, tu calidez que abriga el corazón y esa luz maravillosa que te acompaña dondequiera que vas.
+                <br><br>
+                Que nunca te falten motivos para ser feliz, que todos tus sueños florezcan con la fuerza de un campo de girasoles, y que recuerdes siempre lo mucho que significas.
+              </p>
+              <div class="letter-signature" id="letterSignature">
+                <span>Con todo mi cariño y amor,</span>
+                <strong>Por siempre para ti, Cesia Jael 🌻💛</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="envelope-tip"><i class="fa-solid fa-touch-app"></i> Haz clic en el sobre para abrir o cerrar tu carta</p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: RAZONES PARA SONREÍR (TARJETAS MÁGICAS) -->
+    <section class="reasons-section" id="razones">
+      <div class="section-header">
+        <span class="section-tag">Pequeños destellos de luz</span>
+        <h2 class="section-title">¿Por qué te regalo flores amarillas?</h2>
+        <p class="section-desc">Gira cada tarjeta para descubrir una razón especial.</p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Tarjeta 1 -->
+        <div class="magic-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="card-icon"><i class="fa-solid fa-sun"></i></div>
+              <h3>Por tu Sonrisa</h3>
+              <p class="card-hint">Toca para descubrir</p>
+            </div>
+            <div class="card-back">
+              <div class="back-content">
+                <h4>Tu luz propia ☀️</h4>
+                <p>Porque tienes una forma mágica de iluminar los días grises con tan solo sonreír.</p>
+                <div class="card-flower">🌻</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="magic-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="card-icon"><i class="fa-solid fa-heart"></i></div>
+              <h3>Por tu Bondad</h3>
+              <p class="card-hint">Toca para descubrir</p>
+            </div>
+            <div class="card-back">
+              <div class="back-content">
+                <h4>Corazón puro 💛</h4>
+                <p>Por la pureza de tus intenciones, tu calidez humana y la ternura con la que tratas a los demás.</p>
+                <div class="card-flower">🌼</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="magic-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="card-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+              <h3>Por Promesa</h3>
+              <p class="card-hint">Toca para descubrir</p>
+            </div>
+            <div class="card-back">
+              <div class="back-content">
+                <h4>Siempre aquí 🤝</h4>
+                <p>Porque las flores amarillas significan que sin importar lo que pase, cuentas conmigo incondicionalmente.</p>
+                <div class="card-flower">✨</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="magic-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="card-icon"><i class="fa-solid fa-star"></i></div>
+              <h3>Por tus Sueños</h3>
+              <p class="card-hint">Toca para descubrir</p>
+            </div>
+            <div class="card-back">
+              <div class="back-content">
+                <h4>Brilla sin límites ⭐</h4>
+                <p>Para que cada proyecto y anhelo en tu corazón florezca con tanta fuerza como este campo dorado.</p>
+                <div class="card-flower">🌟</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: JARDÍN INTERACTIVO -->
+    <section class="garden-section" id="jardin">
+      <div class="section-header">
+        <span class="section-tag">Jardín Mágico</span>
+        <h2 class="section-title">Siembra una Flor Amarilla</h2>
+        <p class="section-desc">Haz clic o toca en cualquier parte del cuadro para florecer un girasol con un mensaje sorpresa.</p>
+      </div>
+
+      <div class="interactive-garden" id="gardenArea">
+        <div class="garden-prompt">
+          <i class="fa-solid fa-hand-pointer animate-bounce"></i>
+          <span>¡Toca aquí para plantar una flor!</span>
+        </div>
+        <div class="garden-counter-badge">
+          Flores plantadas: <span id="plantedCount">0</span> 🌻
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: GENERADOR DE MENSAJES INSPIRADORES -->
+    <section class="quotes-section">
+      <div class="quotes-card glass-panel">
+        <i class="fa-solid fa-quote-left quote-icon"></i>
+        <p class="quote-text" id="quoteDisplay">
+          "El amarillo es el color del sol, de la alegría y de las personas que hacen de nuestra vida un lugar más cálido."
+        </p>
+        <span class="quote-author" id="quoteAuthor">— Tradición del 21 de Septiembre</span>
+        
+        <button id="nextQuoteBtn" class="refresh-quote-btn">
+          <i class="fa-solid fa-arrows-rotate"></i> Nuevo mensaje
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL DE PERSONALIZACIÓN -->
+  <div class="modal-overlay" id="customizeModal">
+    <div class="modal-card glass-panel">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Personaliza esta Página</h3>
+        <button class="modal-close-btn" id="closeCustomizeModalBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">Pon el nombre de tu persona especial y escribe un mensaje personalizado.</p>
+        
+        <div class="form-group">
+          <label for="inputRecipient">Nombre de la persona especial:</label>
+          <input type="text" id="inputRecipient" placeholder="Ej: Mi Amor, Sofía, Valen..." maxlength="40">
+        </div>
+
+        <div class="form-group">
+          <label for="inputSender">Firma / De parte de:</label>
+          <input type="text" id="inputSender" placeholder="Ej: Con amor, Tu admirador secreto..." maxlength="40">
+        </div>
+
+        <div class="form-group">
+          <label for="inputMessage">Mensaje para la carta:</label>
+          <textarea id="inputMessage" rows="4" placeholder="Escribe tus palabras más lindas aquí..."></textarea>
+        </div>
+
+        <div class="modal-actions">
+          <button id="saveCustomizeBtn" class="primary-gold-btn full-width">
+            <i class="fa-solid fa-check"></i> Aplicar Cambios
+          </button>
+          <button id="copyShareLinkBtn" class="secondary-glass-btn full-width">
+            <i class="fa-solid fa-link"></i> Copiar Link Personalizado
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL POPUP PARA MENSAJE DE FLOR CENTRAL -->
+  <div class="toast-message" id="flowerToast">
+    <span id="flowerToastIcon">🌻</span>
+    <p id="flowerToastText">¡Eres una persona increíblemente especial!</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>Hecho con amor 💛 para celebrar la magia del 21 de Septiembre</p>
+    <p class="footer-sub">¡Feliz día de las Flores Amarillas!</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
